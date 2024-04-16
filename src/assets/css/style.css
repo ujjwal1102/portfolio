@@ -449,7 +449,8 @@ p {
 # Hero
 --------------------------------------------------------------*/
 #hero {
-  background: url("../img/IMG20240226203625(copy).jpg") repeat scroll center center/cover;
+  /* background: url("../img/IMG20240226203625(copy).jpg") repeat scroll center center/cover; */
+  background: url("../img/home-bg.jpg") repeat scroll center center/cover;
   height: 100vh;
   width: 100%;
 }
@@ -793,6 +794,44 @@ p {
 
 .portfolio-details .portfolio-description p {
   padding: 0;
+}
+
+
+/*--------------------------------------------------------------
+# Akills
+--------------------------------------------------------------*/
+.skills .progress {
+  height: 60px;
+  display: block;
+  background: none;
+  border-radius: 0;
+}
+
+.skills .progress .skill {
+  padding: 0;
+  margin: 0 0 6px 0;
+  text-transform: uppercase;
+  display: block;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+  color: #050d18;
+}
+
+.skills .progress .skill .val {
+  float: right;
+  font-style: normal;
+}
+
+.skills .progress-bar-wrap {
+  background: #dce8f8;
+  height: 10px;
+}
+
+.skills .progress-bar {
+  width: 1px;
+  height: 10px;
+  transition: 0.9s;
+  background-color: #149ddd;
 }
 
 /*--------------------------------------------------------------
