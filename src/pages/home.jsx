@@ -10,8 +10,10 @@ import logo from "../assets/img/logo.png";
 import bp1 from "../assets/img/blog-post-1.jpg";
 import bp2 from "../assets/img/blog-post-2.jpg";
 import bp3 from "../assets/img/blog-post-3.jpg";
+// import useExternalScripts from "./addscript";
 
 const MainPage = () => {
+  
   useEffect(() => {
     const script = document.createElement("script");
     script.src = "/src/assets/js/main.js";
@@ -262,9 +264,9 @@ const MainPage = () => {
                   <li data-filter="*" className="filter-active">
                     All
                   </li>
-                  <li data-filter=".filter-app">App</li>
-                  <li data-filter=".filter-card">Card</li>
-                  <li data-filter=".filter-web">Web</li>
+                  <li data-filter=".filter-app">Projects</li>
+                  <li data-filter=".filter-card">Hobbies</li>
+                  <li data-filter=".filter-web">Awards</li>
                 </ul>
               </div>
             </div>
@@ -412,7 +414,7 @@ const MainPage = () => {
         </div>
         <section id="skills" className="skills section-bg">
   <div className="container">
-    <div className="section-title">
+    <div className="section-title text-center">
       <h2>Skills</h2>
       <p>
         Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex
@@ -521,6 +523,8 @@ const MainPage = () => {
         </div>
       </div>
     </div>
+   
+
   </div>
 </section>
 
