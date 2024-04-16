@@ -114,7 +114,6 @@ const MainPage = () => {
               ></span>
             </h1>
             <p>Software Engineer, Designer, Developer</p>
-
             <ul className="list-unstyled list-social">
               <li>
                 <a href="#">
