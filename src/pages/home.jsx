@@ -406,7 +406,7 @@ const MainPage = () => {
                     href={performance1}
                     data-gallery="portfolioGallery"
                     className="portfolio-lightbox preview-link"
-                    title="Card 2"
+                    title="First College Stage Performance"
                   >
                     <i className="bx bx-plus"></i>
                   </a>
@@ -439,7 +439,7 @@ const MainPage = () => {
                     href={soulful}
                     data-gallery="portfolioGallery"
                     className="portfolio-lightbox preview-link"
-                    title="App 3"
+                    title="Main Dhundne ko Zamane Me"
                   >
                     <i className="bx bx-plus"></i>
                   </a>
