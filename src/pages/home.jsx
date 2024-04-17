@@ -279,8 +279,6 @@ const MainPage = () => {
                   </li>
                   <li data-filter=".filter-app">Projects</li>
                   <li data-filter=".filter-card">Hobbies</li>
-                  {/* <li data-filter=".filter-web">Experience</li>
-                  <li data-filter=".filter-web">Certifications</li> */}
                 </ul>
               </div>
             </div>
