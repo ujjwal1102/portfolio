@@ -42,7 +42,13 @@ h4 {
   font-size: 14px;
   font-weight: 600;
 }
-
+.caveat {
+  font-family: "Caveat", cursive;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  color: #050d18;
+}
 a {
   color: #292929;
   text-decoration: none !important;
@@ -102,6 +108,12 @@ p {
   text-transform: uppercase;
 }
 
+.section-title h3 {
+  font-size: 20px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
 .form-control {
   background-color: transparent;
   border: 1px solid #999;
@@ -147,6 +159,103 @@ p {
 .main-content {
   padding-top: 140px;
 }
+/* -----------------------------------------------------------
+Resume
+------------------------------------------------------------- */
+.resume .resume-title {
+  font-size: 26px;
+  font-weight: 700;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.resume .resume-item {
+  padding: 0 0 20px 20px;
+  margin-top: -2px;
+  border-left: 2px solid #b8a07e3e;
+  position: relative;
+}
+
+.resume .resume-item h4 {
+  line-height: 18px;
+  font-size: 18px;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-family: "Poppins", helvetica;
+  
+  color: #b8a07e;
+  margin-bottom: 10px;
+}
+
+.resume .resume-item h5 {
+  font-size: 16px;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 5px 15px;
+  display: inline-block;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.resume .resume-item ul {
+  padding-left: 20px;
+}
+
+.resume .resume-item ul li {
+  padding-bottom: 10px;
+}
+
+.resume .resume-item:last-child {
+  padding-bottom: 0;
+}
+
+.resume .resume-item::before {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border-radius: 50px;
+  left: -9px;
+  top: 0;
+  background: #b8a07e;
+  border: 2px solid #b8a07e;
+}
+
+#interests {
+  border-radius: 20px;
+  border: 2px solid #b8a07e;
+  padding: 6px;
+  
+  display: inline-block;
+}
+
+.languages h5 {
+  /* font-family: 'poppins',Arial, Helvetica, sans-serif; */
+  font-size: 15px;
+  background: #b8a07e;
+  padding: 15px 10px;
+  display: inline-block;
+  font-weight: 600;
+}
+
+.languages h4{
+  /* font-family: 'poppins',Arial, Helvetica, sans-serif; */
+
+  font-size: 100px;
+  padding: 5px 5px;
+  display: inline-block;
+  font-weight: 600;
+}
+
+.languages p{
+  color: #492C89;
+  font-style: italic;
+}
+
+/* -----------------------------------------------------------
+Resume
+------------------------------------------------------------- */
+
 
 /*--------------------------------------------------------------
 # Back to top button
@@ -449,8 +558,7 @@ p {
 # Hero
 --------------------------------------------------------------*/
 #hero {
-  /* background: url("../img/IMG20240226203625(copy).jpg") repeat scroll center center/cover; */
-  background: url("../img/home-bg.jpg") repeat scroll center center/cover;
+  background: url("../img/hobbies/mirror-selfie-landscape.jpg") repeat scroll center center/cover;
   height: 100vh;
   width: 100%;
 }
@@ -487,10 +595,55 @@ p {
   margin-right: 20px;
 }
 
-.hero-content .list-social li i {
-  color: #fff;
-  font-size: 15px;
+.hero-content .list-social li  i:hover{
+  color:#905401;
+  box-shadow: 2px #b8a07e;
 }
+ .hero-content .list-social li i {
+  color: #fff;
+  font-size: 20px;
+}
+/*
+.hero-content .list-social li a #facebook-icon:hover {
+  color: #3b5998;
+  box-shadow: 2px 2px 2px #3b5998;
+}
+
+.hero-content .list-social li #twitter-icon:hover {
+  color: #1da1f2; 
+  box-shadow: 2px 2px 2px #b8a07e; 
+}
+
+.hero-content .list-social li #instagram-icon:hover {
+  color: #c32aa3; 
+  box-shadow: 2px 2px 2px #b8a07e; 
+}
+
+.hero-content .list-social li #linkedin-icon:hover {
+  color: #0077b5; 
+  box-shadow: 2px 2px 2px #b8a07e; 
+}
+
+.hero-content .list-social li #github-icon:hover {
+  color: #211f1f; 
+  box-shadow: 2px 2px 2px #b8a07e; 
+}
+
+.hero-content .list-social li #spotify-icon:hover {
+  color: #1db954; 
+  box-shadow: 2px 2px 2px #b8a07e; 
+}
+
+.hero-content .list-social li #threads-icon:hover {
+  color: #ff6d61; 
+  box-shadow: 2px 2px 2px #b8a07e; 
+}
+
+.hero-content .list-social li #youtube-icon:hover {
+  color: #ff0000; 
+  box-shadow: 2px 2px 2px #b8a07e; 
+}
+ */
 
 /*--------------------------------------------------------------
 # Breadcrumbs
@@ -679,7 +832,7 @@ p {
 }
 
 #portfolio .portfolio-item {
-  margin-bottom: 30px;
+  margin-bottom: 12px;
 }
 
 #portfolio .portfolio-item .portfolio-info {
@@ -801,7 +954,7 @@ p {
 # Akills
 --------------------------------------------------------------*/
 .skills .progress {
-  height: 60px;
+  height: 80px;
   display: block;
   background: none;
   border-radius: 0;
