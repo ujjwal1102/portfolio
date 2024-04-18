@@ -268,7 +268,6 @@
       clickable: true,
     },
   });
-  
   /**
    * Skills animation
    */
