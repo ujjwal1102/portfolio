@@ -1295,7 +1295,7 @@ const MainPage = () => {
                         target="_blank"
                       >
                         <em className="text-black">
-                          Laitkor labs | Laitkor Consultancy Services Pvt. Ltd.
+                          Laitkor Labs | Laitkor Consultancy Services Pvt. Ltd.
                         </em>
                       </a>
                     </p>
