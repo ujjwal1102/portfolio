@@ -1,5 +1,5 @@
 (function () {
-  // "use strict";
+"use strict"
   /**
    * Easy selector helper function
    */
@@ -110,7 +110,7 @@
    * Mobile nav toggle
    */
   on("click", ".mobile-nav-toggle", function (e) {
-    console.log(e);
+    console.log(e)
     select("#navbar").classList.toggle("navbar-mobile");
     this.classList.toggle("bi-list");
     this.classList.toggle("bi-x");
@@ -184,34 +184,34 @@
   /**
    * Testimonials slider
    */
-  // new Swiper(".services-slider", {
-  //   speed: 600,
-  //   loop: true,
-  //   autoplay: {
-  //     delay: 5000,
-  //     disableOnInteraction: false,
-  //   },
-  //   slidesPerView: "auto",
-  //   pagination: {
-  //     el: ".swiper-pagination",
-  //     type: "bullets",
-  //     clickable: true,
-  //   },
-  //   breakpoints: {
-  //     320: {
-  //       slidesPerView: 1,
-  //       spaceBetween: 20,
-  //     },
-  //     768: {
-  //       slidesPerView: 2,
-  //       spaceBetween: 20,
-  //     },
-  //     1200: {
-  //       slidesPerView: 4,
-  //       spaceBetween: 20,
-  //     },
-  //   },
-  // });
+  new Swiper(".services-slider", {
+    speed: 600,
+    loop: true,
+    autoplay: {
+      delay: 5000,
+      disableOnInteraction: false,
+    },
+    slidesPerView: "auto",
+    pagination: {
+      el: ".swiper-pagination",
+      type: "bullets",
+      clickable: true,
+    },
+    breakpoints: {
+      320: {
+        slidesPerView: 1,
+        spaceBetween: 20,
+      },
+      768: {
+        slidesPerView: 2,
+        spaceBetween: 20,
+      },
+      1200: {
+        slidesPerView: 4,
+        spaceBetween: 20,
+      },
+    },
+  });
 
   /**
    * Porfolio isotope and filter
@@ -284,4 +284,5 @@
   //     },
   //   });
   // }
+  
 })();
