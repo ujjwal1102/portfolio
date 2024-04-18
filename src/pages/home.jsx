@@ -7,11 +7,7 @@ import soulful from "../assets/img/hobbies/soulful.mp4";
 import performance1 from "../assets/img/hobbies/first-performance.mp4";
 import beverp from "../assets/img/projects/beverp.png";
 import "../../src/assets/js/main.js"
-
-import Isotope from 'isotope-layout';
 import Typed from 'typed.js';
-import Swiper from 'swiper';
-import GLightbox from 'glightbox';
 
 const MainPage = () => {
   const [wh, setWH] = useState(32);
@@ -546,7 +542,7 @@ const MainPage = () => {
             <div className="section-title text-center">
               <h2>Skills</h2>
               <p>
-                my expertise extends to various programming languages such as
+                My expertise extends to various programming languages such as
                 Python, JavaScript, and Java and web development, machine
                 learning and deep learning frameworks like React.js and Django,
                 Django REST Framework, Tensorflow, Keras, Matplotlib, OpenCV, as
@@ -1299,7 +1295,7 @@ const MainPage = () => {
                         target="_blank"
                       >
                         <em className="text-black">
-                          Laitor labs | Laitkor Consultancy Services Pvt. Ltd.
+                          Laitkor labs | Laitkor Consultancy Services Pvt. Ltd.
                         </em>
                       </a>
                     </p>
