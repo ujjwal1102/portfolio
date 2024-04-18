@@ -13,6 +13,7 @@
     "glightbox": "^3.3.0",
     "isotope": "^1.0.0-alpha.3",
     "isotope-layout": "^3.0.6",
+    "jquery": "^3.7.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^5.1.0",
