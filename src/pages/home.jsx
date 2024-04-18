@@ -17,6 +17,33 @@ const MainPage = () => {
   const [wh, setWH] = useState(32);
   useEffect(() => {
     setWH(32);
+    const scrollToHash = () => {
+      if (window.location.hash && document.querySelector(window.location.hash)) {
+        const elementPos = document.querySelector(window.location.hash).offsetTop;
+        window.scrollTo({
+          top: elementPos - (document.querySelector("#header").offsetHeight - 16),
+          behavior: "smooth",
+        });
+      }
+    };
+
+    const initTypedEffect = () => {
+      const typedElement = document.querySelector(".typed");
+      if (typedElement) {
+        const typedStrings = typedElement.getAttribute("data-typed-items").split(",");
+        new Typed(".typed", {
+          strings: typedStrings,
+          loop: true,
+          typeSpeed: 100,
+          backSpeed: 50,
+          backDelay: 2000,
+        });
+      }
+    };
+
+    window.addEventListener("load", scrollToHash);
+
+    initTypedEffect();
     const script = document.createElement("script");
     script.src = "/src/assets/js/main.js";
     script.async = true;
@@ -25,196 +52,61 @@ const MainPage = () => {
       document.body.removeChild(script);
     };
   }, []);
-  useEffect(() => {
-    // Easy selector helper function
-    // const select = (el, all = false) => {
-    //   el = el.trim();
-    //   if (all) {
-    //     return [...document.querySelectorAll(el)];
-    //   } else {
-    //     return document.querySelector(el);
-    //   }
-    // };
-
-    // Easy event listener function
-    // const on = (type, el, listener, all = false) => {
-    //   let selectEl = select(el, all);
-    //   if (selectEl) {
-    //     if (all) {
-    //       selectEl.forEach((e) => e.addEventListener(type, listener));
-    //     } else {
-    //       selectEl.addEventListener(type, listener);
-    //     }
-    //   }
-    // };
-
-    // Navbar links active state on scroll
-    // let navbarlinks = select("#navbar .scrollto", true);
-    // const navbarlinksActive = () => {
-    //   let position = window.scrollY + 200;
-    //   navbarlinks.forEach((navbarlink) => {
-    //     if (!navbarlink.hash) return;
-    //     let section = select(navbarlink.hash);
-    //     if (!section) return;
-    //     if (
-    //       position >= section.offsetTop &&
-    //       position <= section.offsetTop + section.offsetHeight
-    //     ) {
-    //       navbarlink.classList.add("active");
-    //     } else {
-    //       navbarlink.classList.remove("active");
-    //     }
-    //   });
-    // };
-    // window.addEventListener("load", navbarlinksActive);
-    // window.addEventListener("scroll", navbarlinksActive);
-
-    // Toggle .header-scrolled class to #header when page is scrolled
-    // let selectHeader = select("#header");
-    // if (selectHeader) {
-    //   const headerScrolled = () => {
-    //     if (window.scrollY > 100) {
-    //       selectHeader.classList.add("header-scrolled");
-    //     } else {
-    //       selectHeader.classList.remove("header-scrolled");
-    //     }
-    //   };
-    //   window.addEventListener("load", headerScrolled);
-    //   window.addEventListener("scroll", headerScrolled);
-    // }
-
-    // Back to top button
-    // let backtotop = select(".back-to-top");
-    // if (backtotop) {
-    //   const toggleBacktotop = () => {
-    //     if (window.scrollY > 100) {
-    //       backtotop.classList.add("active");
-    //     } else {
-    //       backtotop.classList.remove("active");
-    //     }
-    //   };
-    //   window.addEventListener("load", toggleBacktotop);
-    //   window.addEventListener("scroll", toggleBacktotop);
-    // }
-
-    // Mobile nav toggle
-    // on("click", ".mobile-nav-toggle", function (e) {
-    //   select("#navbar").classList.toggle("navbar-mobile");
-    //   this.classList.toggle("bi-list");
-    //   this.classList.toggle("bi-x");
-    // });
-
-    // Mobile nav dropdowns activate
-    // on(
-    //   "click",
-    //   ".navbar .dropdown > a",
-    //   function (e) {
-    //     if (select("#navbar").classList.contains("navbar-mobile")) {
-    //       e.preventDefault();
-    //       this.nextElementSibling.classList.toggle("dropdown-active");
-    //     }
-    //   },
-    //   true
-    // );
-
-    // Scroll with offset on links with a class name .scrollto
-    // on(
-    //   "click",
-    //   ".scrollto",
-    //   function (e) {
-    //     if (select(this.hash)) {
-    //       e.preventDefault();
-    //       let navbar = select("#navbar");
-    //       if (navbar.classList.contains("navbar-mobile")) {
-    //         navbar.classList.remove("navbar-mobile");
-    //         let navbarToggle = select(".mobile-nav-toggle");
-    //         navbarToggle.classList.toggle("bi-list");
-    //         navbarToggle.classList.toggle("bi-x");
-    //       }
-    //       let elementPos = select(this.hash).offsetTop;
-    //       window.scrollTo({
-    //         top: elementPos - (select("#header").offsetHeight - 16),
-    //         behavior: "smooth",
-    //       });
-    //     }
-    //   },
-    //   true
-    // );
-
-    // Scroll with offset on page load with hash links in the url
-    window.addEventListener("load", () => {
-      if (window.location.hash && select(window.location.hash)) {
-        let elementPos = select(window.location.hash).offsetTop;
-        window.scrollTo({
-          top: elementPos - (select("#header").offsetHeight - 16),
-          behavior: "smooth",
-        });
-      }
-    });
-
-    // Hero type effect
-    const typed = select(".typed");
-    if (typed) {
-      let typed_strings = typed.getAttribute("data-typed-items");
-      typed_strings = typed_strings.split(",");
-      new Typed(".typed", {
-        strings: typed_strings,
-        loop: true,
-        typeSpeed: 100,
-        backSpeed: 50,
-        backDelay: 2000,
-      });
-    }
-
-    // Testimonials slider
+  // useEffect(() => {
     
 
-    // let portfolioContainer = select(".portfolio-container");
-    // if (portfolioContainer) {
-    //   let portfolioIsotope = new Isotope(portfolioContainer, {
-    //     itemSelector: ".portfolio-item",
-    //     layoutMode: "fitRows",
-    //   });
+  //   const portfolioContainer = document.querySelector(".portfolio-container");
+    
+  //   if (portfolioContainer) {
+  //     const portfolioIsotope = new Isotope(portfolioContainer, {
+  //       itemSelector: ".portfolio-item",
+  //       layoutMode: "fitRows",
+  //     });
 
-    //   let portfolioFilters = select("#portfolio-flters li", true);
+  //     const portfolioFilters = document.querySelectorAll("#portfolio-flters li");
 
-    //   on(
-    //     "click",
-    //     "#portfolio-flters li",
-    //     function (e) {
-    //       e.preventDefault();
-    //       portfolioFilters.forEach(function (el) {
-    //         el.classList.remove("filter-active");
-    //       });
-    //       this.classList.add("filter-active");
+  //     const handleFilterClick = (e) => {
+  //       e.preventDefault();
+  //       portfolioFilters.forEach((el) => {
+  //         el.classList.remove("filter-active");
+  //       });
+  //       e.currentTarget.classList.add("filter-active");
 
-    //       portfolioIsotope.arrange({
-    //         filter: this.getAttribute("data-filter"),
-    //       });
-    //     },
-    //     true
-    //   );
-    // }
+  //       portfolioIsotope.arrange({
+  //         filter: e.currentTarget.getAttribute("data-filter"),
+  //       });
+  //     };
 
-    const portfolioLightbox = GLightbox({
-      selector: ".portfolio-lightbox",
-    });
+  //     portfolioFilters.forEach((filter) => {
+  //       filter.addEventListener("click", handleFilterClick);
+  //     });
 
-    new Swiper(".portfolio-details-slider", {
-      speed: 400,
-      loop: true,
-      autoplay: {
-        delay: 5000,
-        disableOnInteraction: false,
-      },
-      pagination: {
-        el: ".swiper-pagination",
-        type: "bullets",
-        clickable: true,
-      },
-    });
+  //     return () => {
+  //       portfolioFilters.forEach((filter) => {
+  //         filter.removeEventListener("click", handleFilterClick);
+  //       });
+  //     };
+  //   }
 
-  }, []);
+  //   const portfolioLightbox = GLightbox({
+  //     selector: ".portfolio-lightbox",
+  //   });
+
+  //   new Swiper(".portfolio-details-slider", {
+  //     speed: 400,
+  //     loop: true,
+  //     autoplay: {
+  //       delay: 5000,
+  //       disableOnInteraction: false,
+  //     },
+  //     pagination: {
+  //       el: ".swiper-pagination",
+  //       type: "bullets",
+  //       clickable: true,
+  //     },
+  //   });
+
+  // }, []);
   return (
     <>
       <header id="header" className="fixed-top ">
