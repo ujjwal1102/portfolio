@@ -223,9 +223,8 @@
         itemSelector: ".portfolio-item",
         layoutMode: "fitRows",
       });
-
+      
       let portfolioFilters = select("#portfolio-flters li", true);
-
       on(
         "click",
         "#portfolio-flters li",
@@ -235,7 +234,6 @@
             el.classList.remove("filter-active");
           });
           this.classList.add("filter-active");
-
           portfolioIsotope.arrange({
             filter: this.getAttribute("data-filter"),
           });
