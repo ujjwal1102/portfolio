@@ -5,7 +5,7 @@ import '../src/assets/vendor/bootstrap-icons/bootstrap-icons.css'
 import '../src/assets/vendor/boxicons/css/boxicons.min.css'
 import '../src/assets/vendor/glightbox/css/glightbox.min.css'
 import '../src/assets/vendor/swiper/swiper-bundle.min.css'
-import '../src/assets/js/main.js'
+
 
 function App() {
   return (
