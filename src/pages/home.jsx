@@ -6,7 +6,7 @@ import faceRect from "../assets/img/hobbies/face-rect.jpg";
 import soulful from "../assets/img/hobbies/soulful.mp4";
 import performance1 from "../assets/img/hobbies/first-performance.mp4";
 import beverp from "../assets/img/projects/beverp.png";
-// import "../../src/assets/js/main.js"
+import "../../src/assets/js/main.js"
 
 import Isotope from 'isotope-layout';
 import Typed from 'typed.js';
@@ -15,87 +15,87 @@ import GLightbox from 'glightbox';
 
 const MainPage = () => {
   const [wh, setWH] = useState(32);
-  // useEffect(() => {
-  //   setWH(32);
-  //   const script = document.createElement("script");
-  //   script.src = jsfile;
-  //   script.async = true;
-  //   document.body.appendChild(script);
-  //   return () => {
-  //     document.body.removeChild(script);
-  //   };
-  // }, []);
+  useEffect(() => {
+    setWH(32);
+    const script = document.createElement("script");
+    script.src = "/src/assets/js/main.js";
+    script.async = true;
+    document.body.appendChild(script);
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
   useEffect(() => {
     // Easy selector helper function
-    const select = (el, all = false) => {
-      el = el.trim();
-      if (all) {
-        return [...document.querySelectorAll(el)];
-      } else {
-        return document.querySelector(el);
-      }
-    };
+    // const select = (el, all = false) => {
+    //   el = el.trim();
+    //   if (all) {
+    //     return [...document.querySelectorAll(el)];
+    //   } else {
+    //     return document.querySelector(el);
+    //   }
+    // };
 
     // Easy event listener function
-    const on = (type, el, listener, all = false) => {
-      let selectEl = select(el, all);
-      if (selectEl) {
-        if (all) {
-          selectEl.forEach((e) => e.addEventListener(type, listener));
-        } else {
-          selectEl.addEventListener(type, listener);
-        }
-      }
-    };
+    // const on = (type, el, listener, all = false) => {
+    //   let selectEl = select(el, all);
+    //   if (selectEl) {
+    //     if (all) {
+    //       selectEl.forEach((e) => e.addEventListener(type, listener));
+    //     } else {
+    //       selectEl.addEventListener(type, listener);
+    //     }
+    //   }
+    // };
 
     // Navbar links active state on scroll
-    let navbarlinks = select("#navbar .scrollto", true);
-    const navbarlinksActive = () => {
-      let position = window.scrollY + 200;
-      navbarlinks.forEach((navbarlink) => {
-        if (!navbarlink.hash) return;
-        let section = select(navbarlink.hash);
-        if (!section) return;
-        if (
-          position >= section.offsetTop &&
-          position <= section.offsetTop + section.offsetHeight
-        ) {
-          navbarlink.classList.add("active");
-        } else {
-          navbarlink.classList.remove("active");
-        }
-      });
-    };
-    window.addEventListener("load", navbarlinksActive);
-    window.addEventListener("scroll", navbarlinksActive);
+    // let navbarlinks = select("#navbar .scrollto", true);
+    // const navbarlinksActive = () => {
+    //   let position = window.scrollY + 200;
+    //   navbarlinks.forEach((navbarlink) => {
+    //     if (!navbarlink.hash) return;
+    //     let section = select(navbarlink.hash);
+    //     if (!section) return;
+    //     if (
+    //       position >= section.offsetTop &&
+    //       position <= section.offsetTop + section.offsetHeight
+    //     ) {
+    //       navbarlink.classList.add("active");
+    //     } else {
+    //       navbarlink.classList.remove("active");
+    //     }
+    //   });
+    // };
+    // window.addEventListener("load", navbarlinksActive);
+    // window.addEventListener("scroll", navbarlinksActive);
 
     // Toggle .header-scrolled class to #header when page is scrolled
-    let selectHeader = select("#header");
-    if (selectHeader) {
-      const headerScrolled = () => {
-        if (window.scrollY > 100) {
-          selectHeader.classList.add("header-scrolled");
-        } else {
-          selectHeader.classList.remove("header-scrolled");
-        }
-      };
-      window.addEventListener("load", headerScrolled);
-      window.addEventListener("scroll", headerScrolled);
-    }
+    // let selectHeader = select("#header");
+    // if (selectHeader) {
+    //   const headerScrolled = () => {
+    //     if (window.scrollY > 100) {
+    //       selectHeader.classList.add("header-scrolled");
+    //     } else {
+    //       selectHeader.classList.remove("header-scrolled");
+    //     }
+    //   };
+    //   window.addEventListener("load", headerScrolled);
+    //   window.addEventListener("scroll", headerScrolled);
+    // }
 
     // Back to top button
-    let backtotop = select(".back-to-top");
-    if (backtotop) {
-      const toggleBacktotop = () => {
-        if (window.scrollY > 100) {
-          backtotop.classList.add("active");
-        } else {
-          backtotop.classList.remove("active");
-        }
-      };
-      window.addEventListener("load", toggleBacktotop);
-      window.addEventListener("scroll", toggleBacktotop);
-    }
+    // let backtotop = select(".back-to-top");
+    // if (backtotop) {
+    //   const toggleBacktotop = () => {
+    //     if (window.scrollY > 100) {
+    //       backtotop.classList.add("active");
+    //     } else {
+    //       backtotop.classList.remove("active");
+    //     }
+    //   };
+    //   window.addEventListener("load", toggleBacktotop);
+    //   window.addEventListener("scroll", toggleBacktotop);
+    // }
 
     // Mobile nav toggle
     on("click", ".mobile-nav-toggle", function (e) {
@@ -167,69 +167,39 @@ const MainPage = () => {
     }
 
     // Testimonials slider
-    new Swiper(".services-slider", {
-      speed: 600,
-      loop: true,
-      autoplay: {
-        delay: 5000,
-        disableOnInteraction: false,
-      },
-      slidesPerView: "auto",
-      pagination: {
-        el: ".swiper-pagination",
-        type: "bullets",
-        clickable: true,
-      },
-      breakpoints: {
-        320: {
-          slidesPerView: 1,
-          spaceBetween: 20,
-        },
-        768: {
-          slidesPerView: 2,
-          spaceBetween: 20,
-        },
-        1200: {
-          slidesPerView: 4,
-          spaceBetween: 20,
-        },
-      },
-    });
+    
 
-    // Porfolio isotope and filter
-    let portfolioContainer = select(".portfolio-container");
-    if (portfolioContainer) {
-      let portfolioIsotope = new Isotope(portfolioContainer, {
-        itemSelector: ".portfolio-item",
-        layoutMode: "fitRows",
-      });
+    // let portfolioContainer = select(".portfolio-container");
+    // if (portfolioContainer) {
+    //   let portfolioIsotope = new Isotope(portfolioContainer, {
+    //     itemSelector: ".portfolio-item",
+    //     layoutMode: "fitRows",
+    //   });
 
-      let portfolioFilters = select("#portfolio-flters li", true);
+    //   let portfolioFilters = select("#portfolio-flters li", true);
 
-      on(
-        "click",
-        "#portfolio-flters li",
-        function (e) {
-          e.preventDefault();
-          portfolioFilters.forEach(function (el) {
-            el.classList.remove("filter-active");
-          });
-          this.classList.add("filter-active");
+    //   on(
+    //     "click",
+    //     "#portfolio-flters li",
+    //     function (e) {
+    //       e.preventDefault();
+    //       portfolioFilters.forEach(function (el) {
+    //         el.classList.remove("filter-active");
+    //       });
+    //       this.classList.add("filter-active");
 
-          portfolioIsotope.arrange({
-            filter: this.getAttribute("data-filter"),
-          });
-        },
-        true
-      );
-    }
+    //       portfolioIsotope.arrange({
+    //         filter: this.getAttribute("data-filter"),
+    //       });
+    //     },
+    //     true
+    //   );
+    // }
 
-    // Initiate portfolio lightbox
     const portfolioLightbox = GLightbox({
       selector: ".portfolio-lightbox",
     });
 
-    // Portfolio details slider
     new Swiper(".portfolio-details-slider", {
       speed: 400,
       loop: true,
