@@ -6,11 +6,19 @@ import faceRect from "../assets/img/hobbies/face-rect.jpg";
 import soulful from "../assets/img/hobbies/soulful.mp4";
 import performance1 from "../assets/img/hobbies/first-performance.mp4";
 import beverp from "../assets/img/projects/beverp.png";
-import "../../src/assets/js/main.js"
 import Typed from 'typed.js';
 
 const MainPage = () => {
   const [wh, setWH] = useState(32);
+  useEffect(()=>{
+    const script = document.createElement("script");
+    script.src = "/src/assets/js/main.js";
+    script.async = true;
+    document.body.appendChild(script);
+    return () => {
+      document.body.removeChild(script);
+    };
+  },[])
   useEffect(() => {
     setWH(32);
     const scrollToHash = () => {
@@ -40,13 +48,7 @@ const MainPage = () => {
     window.addEventListener("load", scrollToHash);
 
     initTypedEffect();
-    const script = document.createElement("script");
-    script.src = "/src/assets/js/main.js";
-    script.async = true;
-    document.body.appendChild(script);
-    return () => {
-      document.body.removeChild(script);
-    };
+    
   }, []);
   // useEffect(() => {
     
