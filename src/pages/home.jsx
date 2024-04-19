@@ -20,6 +20,60 @@ const MainPage = () => {
     //   document.body.removeChild(script);
     // };
   }, []);
+
+  const [portfolioIsotope, setPortfolioIsotope] = useState(null);
+  const [portfolioFilters, setPortfolioFilters] = useState([]);
+
+  useEffect(() => {
+    const select = (el, all = false) => {
+      if (all) {
+        return [...document.querySelectorAll(el)];
+      } else {
+        return document.querySelector(el);
+      }
+    };
+
+    const initializePortfolio = () => {
+      const portfolioContainer = select(".portfolio-container");
+      if (portfolioContainer) {
+        const isotope = new Isotope(portfolioContainer, {
+          itemSelector: ".portfolio-item",
+          layoutMode: "fitRows",
+        });
+        setPortfolioIsotope(isotope);
+
+        const filters = select("#portfolio-flters li", true);
+        setPortfolioFilters(filters);
+
+        filters.forEach(filter => {
+          filter.addEventListener("click", handleFilterClick);
+        });
+      }
+    };
+
+    const handleFilterClick = (e) => {
+      e.preventDefault();
+      portfolioFilters.forEach((el) => {
+        el.classList.remove("filter-active");
+      });
+      e.target.classList.add("filter-active");
+      portfolioIsotope.arrange({
+        filter: e.target.getAttribute("data-filter"),
+      });
+    };
+
+    initializePortfolio();
+
+    // Cleanup function to remove event listeners
+    return () => {
+      if (portfolioFilters.length > 0) {
+        portfolioFilters.forEach(filter => {
+          filter.removeEventListener("click", handleFilterClick);
+        });
+      }
+    };
+  }, [portfolioIsotope, portfolioFilters]);
+  
   return (
     <>
       <header id="header" className="fixed-top ">
