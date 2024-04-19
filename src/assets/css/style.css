@@ -183,7 +183,7 @@ Resume
   font-weight: 600;
   text-transform: uppercase;
   font-family: "Poppins", helvetica;
-  
+
   color: #b8a07e;
   margin-bottom: 10px;
 }
@@ -199,12 +199,18 @@ Resume
 
 .resume .resume-item ul {
   padding-left: 20px;
+  font-family: "poppins", helvetica;
 }
 
 .resume .resume-item ul li {
   padding-bottom: 10px;
+  font-size: 14px;
 }
-
+.percentage {
+  color: #898989;
+  font-family: "poppins", Helvetica;
+  font-size: 14px;
+}
 .resume .resume-item:last-child {
   padding-bottom: 0;
 }
@@ -225,7 +231,8 @@ Resume
   border-radius: 20px;
   border: 2px solid #b8a07e;
   padding: 6px;
-  
+  font-family: "poppins", helvetica;
+  font-size: 14px;
   display: inline-block;
 }
 
@@ -238,7 +245,7 @@ Resume
   font-weight: 600;
 }
 
-.languages h4{
+.languages h4 {
   /* font-family: 'poppins',Arial, Helvetica, sans-serif; */
 
   font-size: 100px;
@@ -247,15 +254,14 @@ Resume
   font-weight: 600;
 }
 
-.languages p{
-  color: #492C89;
+.languages p {
+  color: #492c89;
   font-style: italic;
 }
 
 /* -----------------------------------------------------------
 Resume
 ------------------------------------------------------------- */
-
 
 /*--------------------------------------------------------------
 # Back to top button
@@ -378,7 +384,7 @@ Resume
 .navbar a:hover,
 .navbar .active,
 .navbar .active:focus,
-.navbar li:hover>a {
+.navbar li:hover > a {
   color: #b8a07e;
 }
 
@@ -412,11 +418,11 @@ Resume
 
 .navbar .dropdown ul a:hover,
 .navbar .dropdown ul .active:hover,
-.navbar .dropdown ul li:hover>a {
+.navbar .dropdown ul li:hover > a {
   color: #b8a07e;
 }
 
-.navbar .dropdown:hover>ul {
+.navbar .dropdown:hover > ul {
   opacity: 1;
   top: 100%;
   visibility: visible;
@@ -428,7 +434,7 @@ Resume
   visibility: hidden;
 }
 
-.navbar .dropdown .dropdown:hover>ul {
+.navbar .dropdown .dropdown:hover > ul {
   opacity: 1;
   top: 0;
   left: 100%;
@@ -440,7 +446,7 @@ Resume
     left: -90%;
   }
 
-  .navbar .dropdown .dropdown:hover>ul {
+  .navbar .dropdown .dropdown:hover > ul {
     left: -100%;
   }
 }
@@ -511,7 +517,7 @@ Resume
 
 .navbar-mobile a:hover,
 .navbar-mobile .active,
-.navbar-mobile li:hover>a {
+.navbar-mobile li:hover > a {
   color: #b8a07e;
 }
 
@@ -546,11 +552,11 @@ Resume
 
 .navbar-mobile .dropdown ul a:hover,
 .navbar-mobile .dropdown ul .active:hover,
-.navbar-mobile .dropdown ul li:hover>a {
+.navbar-mobile .dropdown ul li:hover > a {
   color: #b8a07e;
 }
 
-.navbar-mobile .dropdown>.dropdown-active {
+.navbar-mobile .dropdown > .dropdown-active {
   display: block;
 }
 
@@ -558,7 +564,8 @@ Resume
 # Hero
 --------------------------------------------------------------*/
 #hero {
-  background: url("../img/hobbies/mirror-selfie-landscape.jpg") repeat scroll center center/cover;
+  background: url("../img/hobbies/mirror-selfie-landscape.jpg") repeat scroll
+    center center/cover;
   height: 100vh;
   width: 100%;
 }
@@ -595,11 +602,11 @@ Resume
   margin-right: 20px;
 }
 
-.hero-content .list-social li  i:hover{
-  color:#905401;
+.hero-content .list-social li i:hover {
+  color: #905401;
   box-shadow: 2px #b8a07e;
 }
- .hero-content .list-social li i {
+.hero-content .list-social li i {
   color: #fff;
   font-size: 20px;
 }
@@ -681,11 +688,11 @@ Resume
   font-size: 14px;
 }
 
-.breadcrumbs ol li+li {
+.breadcrumbs ol li + li {
   padding-left: 10px;
 }
 
-.breadcrumbs ol li+li::before {
+.breadcrumbs ol li + li::before {
   display: inline-block;
   padding-right: 10px;
   color: #6c757d;
@@ -900,7 +907,10 @@ Resume
   position: relative;
 }
 
-.portfolio-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet {
+.portfolio-details
+  .portfolio-details-slider
+  .swiper-pagination
+  .swiper-pagination-bullet {
   width: 12px;
   height: 12px;
   background-color: #fff;
@@ -908,7 +918,10 @@ Resume
   border: 1px solid #b8a07e;
 }
 
-.portfolio-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet-active {
+.portfolio-details
+  .portfolio-details-slider
+  .swiper-pagination
+  .swiper-pagination-bullet-active {
   background-color: #b8a07e;
 }
 
@@ -931,7 +944,7 @@ Resume
   font-size: 15px;
 }
 
-.portfolio-details .portfolio-info ul li+li {
+.portfolio-details .portfolio-info ul li + li {
   margin-top: 10px;
 }
 
@@ -948,7 +961,6 @@ Resume
 .portfolio-details .portfolio-description p {
   padding: 0;
 }
-
 
 /*--------------------------------------------------------------
 # Akills
@@ -1048,6 +1060,7 @@ Resume
 # Journal
 --------------------------------------------------------------*/
 #contact {
+  font-family: "Poppins", sans-serif;
   height: auto;
   width: 100%;
 }
@@ -1055,6 +1068,10 @@ Resume
 .contact-details {
   list-style: none;
   margin: 0;
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 20px;
+  color: #898989;
   padding: 0;
 }
 
@@ -1070,50 +1087,6 @@ Resume
 
 #contact textarea {
   min-height: 160px;
-}
-
-.php-email-form .error-message {
-  display: none;
-  color: #fff;
-  background: #ed3c0d;
-  text-align: left;
-  padding: 15px;
-  margin-bottom: 15px;
-  font-weight: 600;
-}
-
-.php-email-form .error-message br+br {
-  margin-top: 25px;
-}
-
-.php-email-form .sent-message {
-  display: none;
-  color: #fff;
-  background: #18d26e;
-  text-align: center;
-  padding: 15px;
-  font-weight: 600;
-  margin-bottom: 15px;
-}
-
-.php-email-form .loading {
-  display: none;
-  background: #fff;
-  text-align: center;
-  padding: 15px;
-  margin-bottom: 15px;
-}
-
-.php-email-form .loading:before {
-  content: "";
-  display: inline-block;
-  border-radius: 50%;
-  width: 24px;
-  height: 24px;
-  margin: 0 10px -6px 0;
-  border: 3px solid #18d26e;
-  border-top-color: #eee;
-  animation: animate-loading 1s linear infinite;
 }
 
 @keyframes animate-loading {
@@ -1322,7 +1295,6 @@ blockquote {
  *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  */
 @media (min-width: 768px) and (max-width: 991px) {
-
   /* Navbar */
   nav {
     padding: 10px 15px;
@@ -1405,7 +1377,6 @@ blockquote {
  *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  */
 @media (max-width: 767px) {
-
   /* Navbar */
   nav {
     padding: 20px 15px;
@@ -1488,7 +1459,6 @@ blockquote {
  *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  */
 @media (max-width: 600px) {
-
   /* Navbar */
   nav {
     padding: 20px 15px;
@@ -1571,7 +1541,6 @@ blockquote {
  *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  */
 @media (max-width: 480px) {
-
   /* Navbar */
   nav {
     padding: 20px 15px;
@@ -1653,7 +1622,6 @@ blockquote {
  *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  */
 @media (max-width: 320px) {
-
   /* Navbar */
   nav {
     padding: 20px 15px;

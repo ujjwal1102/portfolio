@@ -11,68 +11,7 @@ const MainPage = () => {
   const [wh, setWH] = useState(24);
   useEffect(() => {
     mainScript();
-    // setWH(32);
-    // const script = document.createElement("script");
-    // script.src = mainScript;
-    // script.async = true;
-    // document.body.appendChild(script);
-    // return () => {
-    //   document.body.removeChild(script);
-    // };
   }, []);
-
-  // const [portfolioIsotope, setPortfolioIsotope] = useState(null);
-  // const [portfolioFilters, setPortfolioFilters] = useState([]);
-
-  // useEffect(() => {
-  //   const select = (el, all = false) => {
-  //     if (all) {
-  //       return [...document.querySelectorAll(el)];
-  //     } else {
-  //       return document.querySelector(el);
-  //     }
-  //   };
-
-  //   const initializePortfolio = () => {
-  //     const portfolioContainer = select(".portfolio-container");
-  //     if (portfolioContainer) {
-  //       const isotope = new Isotope(portfolioContainer, {
-  //         itemSelector: ".portfolio-item",
-  //         layoutMode: "fitRows",
-  //       });
-  //       setPortfolioIsotope(isotope);
-
-  //       const filters = select("#portfolio-flters li", true);
-  //       setPortfolioFilters(filters);
-
-  //       filters.forEach(filter => {
-  //         filter.addEventListener("click", handleFilterClick);
-  //       });
-  //     }
-  //   };
-
-  //   const handleFilterClick = (e) => {
-  //     e.preventDefault();
-  //     portfolioFilters.forEach((el) => {
-  //       el.classList.remove("filter-active");
-  //     });
-  //     e.target.classList.add("filter-active");
-  //     portfolioIsotope.arrange({
-  //       filter: e.target.getAttribute("data-filter"),
-  //     });
-  //   };
-
-  //   initializePortfolio();
-
-  //   // Cleanup function to remove event listeners
-  //   return () => {
-  //     if (portfolioFilters.length > 0) {
-  //       portfolioFilters.forEach(filter => {
-  //         filter.removeEventListener("click", handleFilterClick);
-  //       });
-  //     }
-  //   };
-  // }, [portfolioIsotope, portfolioFilters]);
   
   return (
     <>
@@ -83,7 +22,7 @@ const MainPage = () => {
             <h3 className="caveat">Ujjwal Srivastava</h3>
           </a>
 
-          <nav id="navbar" className="navbar">
+          <nav id="navbar" className="navbar ">
             <ul>
               <li>
                 <a className="nav-link scrollto active" href="#hero">
@@ -117,7 +56,7 @@ const MainPage = () => {
                 </a>
               </li>
             </ul>
-            <i className="bi bi-list mobile-nav-toggle"></i>
+            <i className="bi mobile-nav-toggle bi-list"></i>
           </nav>
         </div>
       </header>
@@ -377,7 +316,7 @@ const MainPage = () => {
                     <i className="bx bx-plus"></i>
                   </a>
                   <a
-                    href="portfolio-details.html"
+                    href="/"
                     className="details-link"
                     title="More Details"
                   >
@@ -432,7 +371,7 @@ const MainPage = () => {
                     <i className="bx bx-plus"></i>
                   </a>
                   <a
-                    href="portfolio-details.html"
+                    href="/"
                     className="details-link"
                     title="More Details"
                   >
@@ -464,7 +403,7 @@ const MainPage = () => {
                     <i className="bx bx-plus"></i>
                   </a>
                   <a
-                    href="portfolio-details.html"
+                    href="/"
                     className="details-link"
                     title="More Details"
                   >
@@ -497,7 +436,7 @@ const MainPage = () => {
                     <i className="bx bx-plus"></i>
                   </a>
                   <a
-                    href="portfolio-details.html"
+                    href="/"
                     className="details-link"
                     title="More Details"
                   >
@@ -1347,7 +1286,7 @@ const MainPage = () => {
                       </a>
                     </p>
 
-                    <p>Aggregate Percentage : 78.95%</p>
+                    <p className="percentage">Aggregate Percentage : 78.95%</p>
                     <p />
                   </div>
                   <div className="resume-item">
@@ -1364,7 +1303,7 @@ const MainPage = () => {
                         </em>
                       </a>
                     </p>
-                    <p>Aggregate Percentage : 79.46%</p>
+                    <p className="percentage">Aggregate Percentage : 79.46%</p>
                   </div>
                   <div className="resume-item">
                     <h4>High School</h4>
@@ -1380,7 +1319,7 @@ const MainPage = () => {
                         </em>
                       </a>
                     </p>
-                    <p>Aggregate Percentage : 80.00%</p>
+                    <p className="percentage">Aggregate Percentage : 80.00%</p>
                   </div>
                   <h4
                     className="text-uppercase py-2"
@@ -1495,18 +1434,16 @@ const MainPage = () => {
                     <h4>Ecommerce Web Application</h4>
                     <ul>
                       <li>
-                        Created Ecommerce Web App using Dhango, DRF and React.js
+                        Created Ecommerce Web App using Django, DRF & React.js with SQLite DB
                       </li>
                       <li>
                         Sleek and intuitive user interface for easy navigation
-                        and pleasant shopping experience. Created a&nbsp;web
-                        platform where users can enjoy listening music, watching
-                        movies/web series, upload/download albums, rent albums
-                        on temporary basis or buy subscriptions
+                        and pleasant shopping experience. Created a web
+                        platform where users (sellers/customers) can upload and purchase products.
                       </li>
                       <li>
                         Comprehensive product catalog with detailed descriptions
-                        and images. Paytm payment gateway integration and Stripe
+                        and images. Payment gateway integration of Stripe using 
                         API integration
                       </li>
                       <li>
