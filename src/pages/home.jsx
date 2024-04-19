@@ -6,105 +6,20 @@ import faceRect from "../assets/img/hobbies/face-rect.jpg";
 import soulful from "../assets/img/hobbies/soulful.mp4";
 import performance1 from "../assets/img/hobbies/first-performance.mp4";
 import beverp from "../assets/img/projects/beverp.png";
-import Typed from 'typed.js';
-
+import mainScript from "../assets/js/main.js"
 const MainPage = () => {
-  const [wh, setWH] = useState(32);
-  useEffect(()=>{
-    const script = document.createElement("script");
-    script.src = "/src/assets/js/main.js";
-    script.async = true;
-    document.body.appendChild(script);
-    return () => {
-      document.body.removeChild(script);
-    };
-  },[])
+  const [wh, setWH] = useState(24);
   useEffect(() => {
-    setWH(32);
-    const scrollToHash = () => {
-      if (window.location.hash && document.querySelector(window.location.hash)) {
-        const elementPos = document.querySelector(window.location.hash).offsetTop;
-        window.scrollTo({
-          top: elementPos - (document.querySelector("#header").offsetHeight - 16),
-          behavior: "smooth",
-        });
-      }
-    };
-
-    const initTypedEffect = () => {
-      const typedElement = document.querySelector(".typed");
-      if (typedElement) {
-        const typedStrings = typedElement.getAttribute("data-typed-items").split(",");
-        new Typed(".typed", {
-          strings: typedStrings,
-          loop: true,
-          typeSpeed: 100,
-          backSpeed: 50,
-          backDelay: 2000,
-        });
-      }
-    };
-
-    window.addEventListener("load", scrollToHash);
-
-    initTypedEffect();
-    
+    mainScript();
+    // setWH(32);
+    // const script = document.createElement("script");
+    // script.src = mainScript;
+    // script.async = true;
+    // document.body.appendChild(script);
+    // return () => {
+    //   document.body.removeChild(script);
+    // };
   }, []);
-  // useEffect(() => {
-    
-
-  //   const portfolioContainer = document.querySelector(".portfolio-container");
-    
-  //   if (portfolioContainer) {
-  //     const portfolioIsotope = new Isotope(portfolioContainer, {
-  //       itemSelector: ".portfolio-item",
-  //       layoutMode: "fitRows",
-  //     });
-
-  //     const portfolioFilters = document.querySelectorAll("#portfolio-flters li");
-
-  //     const handleFilterClick = (e) => {
-  //       e.preventDefault();
-  //       portfolioFilters.forEach((el) => {
-  //         el.classList.remove("filter-active");
-  //       });
-  //       e.currentTarget.classList.add("filter-active");
-
-  //       portfolioIsotope.arrange({
-  //         filter: e.currentTarget.getAttribute("data-filter"),
-  //       });
-  //     };
-
-  //     portfolioFilters.forEach((filter) => {
-  //       filter.addEventListener("click", handleFilterClick);
-  //     });
-
-  //     return () => {
-  //       portfolioFilters.forEach((filter) => {
-  //         filter.removeEventListener("click", handleFilterClick);
-  //       });
-  //     };
-  //   }
-
-  //   const portfolioLightbox = GLightbox({
-  //     selector: ".portfolio-lightbox",
-  //   });
-
-  //   new Swiper(".portfolio-details-slider", {
-  //     speed: 400,
-  //     loop: true,
-  //     autoplay: {
-  //       delay: 5000,
-  //       disableOnInteraction: false,
-  //     },
-  //     pagination: {
-  //       el: ".swiper-pagination",
-  //       type: "bullets",
-  //       clickable: true,
-  //     },
-  //   });
-
-  // }, []);
   return (
     <>
       <header id="header" className="fixed-top ">
@@ -544,7 +459,7 @@ const MainPage = () => {
             <div className="section-title text-center">
               <h2>Skills</h2>
               <p>
-                My expertise extends to various programming languages such as
+                my expertise extends to various programming languages such as
                 Python, JavaScript, and Java and web development, machine
                 learning and deep learning frameworks like React.js and Django,
                 Django REST Framework, Tensorflow, Keras, Matplotlib, OpenCV, as
@@ -1297,7 +1212,7 @@ const MainPage = () => {
                         target="_blank"
                       >
                         <em className="text-black">
-                          Laitkor Labs | Laitkor Consultancy Services Pvt. Ltd.
+                          Laitor labs | Laitkor Consultancy Services Pvt. Ltd.
                         </em>
                       </a>
                     </p>

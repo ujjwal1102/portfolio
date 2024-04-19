@@ -1,5 +1,5 @@
-(function () {
-"use strict"
+export default function () {
+  "use strict";
   /**
    * Easy selector helper function
    */
@@ -110,7 +110,7 @@
    * Mobile nav toggle
    */
   on("click", ".mobile-nav-toggle", function (e) {
-    console.log(e)
+    console.log(e);
     select("#navbar").classList.toggle("navbar-mobile");
     this.classList.toggle("bi-list");
     this.classList.toggle("bi-x");
@@ -168,18 +168,18 @@
   /**
    * Hero type effect
    */
-  // const typed = select(".typed");
-  // if (typed) {
-  //   let typed_strings = typed.getAttribute("data-typed-items");
-  //   typed_strings = typed_strings.split(",");
-  //   new Typed(".typed", {
-  //     strings: typed_strings,
-  //     loop: true,
-  //     typeSpeed: 100,
-  //     backSpeed: 50,
-  //     backDelay: 2000,
-  //   });
-  // }
+  const typed = select(".typed");
+  if (typed) {
+    let typed_strings = typed.getAttribute("data-typed-items");
+    typed_strings = typed_strings.split(",");
+    new Typed(".typed", {
+      strings: typed_strings,
+      loop: true,
+      typeSpeed: 100,
+      backSpeed: 50,
+      backDelay: 2000,
+    });
+  }
 
   /**
    * Testimonials slider
@@ -223,7 +223,7 @@
         itemSelector: ".portfolio-item",
         layoutMode: "fitRows",
       });
-      
+
       let portfolioFilters = select("#portfolio-flters li", true);
       on(
         "click",
@@ -282,5 +282,4 @@
   //     },
   //   });
   // }
-  
-})();
+}
