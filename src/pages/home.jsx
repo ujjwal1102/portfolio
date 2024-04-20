@@ -46,7 +46,7 @@ const MainPage = () => {
               </li>
               <li>
                 <a className="nav-link  scrollto" href="#journal">
-                  Blog
+                  Resume
                 </a>
               </li>
 
