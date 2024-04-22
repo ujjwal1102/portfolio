@@ -17,52 +17,54 @@ const MainPage = () => {
   useEffect(() => {
     // mainScript();
   }, []);
-  const handleIsotope = () => {
-    let portfolioContainer = document.querySelector('.portfolio-container');
-    if (portfolioContainer) {
-      let portfolioIsotope = new Isotope(portfolioContainer, {
-        itemSelector: '.portfolio-item',
-        layoutMode: 'fitRows',
-      });
-
-      let portfolioFilters = document.querySelectorAll('#portfolio-flters li');
-
-      portfolioFilters.forEach((filter) => {
-        filter.addEventListener('click', function () {
-          portfolioFilters.forEach((el) => {
-            el.classList.remove('filter-active');
-          });
-          this.classList.add('filter-active');
-
-          portfolioIsotope.arrange({
-            filter: this.getAttribute('data-filter'),
-          });
-        });
-      });
-    }
-  };
-  const handleTyped = () => {
-    const typedElement = document.querySelector('.typed');
-    if (typedElement) {
-      let typed_strings = typedElement.getAttribute('data-typed-items');
-      typed_strings = typed_strings.split(',');
-      new Typed('.typed', {
-        strings: typed_strings,
-        loop: true,
-        typeSpeed: 100,
-        backSpeed: 50,
-        backDelay: 2000,
-      });
-    }
-  };
-  const handleProgress = () => {
-    let progressBars = document.querySelectorAll('.progress .progress-bar');
-    progressBars.forEach((el) => {
-      el.style.width = `${el.getAttribute('aria-valuenow')}%`;
-    });
-  };
+  
 
   useEffect(() => {
+    const handleIsotope = () => {
+      let portfolioContainer = document.querySelector('.portfolio-container');
+      if (portfolioContainer) {
+        let portfolioIsotope = new Isotope(portfolioContainer, {
+          itemSelector: '.portfolio-item',
+          layoutMode: 'fitRows',
+        });
+  
+        let portfolioFilters = document.querySelectorAll('#portfolio-flters li');
+  
+        portfolioFilters.forEach((filter) => {
+          filter.addEventListener('click', function () {
+            portfolioFilters.forEach((el) => {
+              el.classList.remove('filter-active');
+            });
+            this.classList.add('filter-active');
+  
+            portfolioIsotope.arrange({
+              filter: this.getAttribute('data-filter'),
+            });
+          });
+        });
+      }
+    };
+    const handleTyped = () => {
+      const typedElement = document.querySelector('.typed');
+      if (typedElement) {
+        let typed_strings = typedElement.getAttribute('data-typed-items');
+        typed_strings = typed_strings.split(',');
+        new Typed('.typed', {
+          strings: typed_strings,
+          loop: true,
+          typeSpeed: 100,
+          backSpeed: 50,
+          backDelay: 2000,
+        });
+      }
+    };
+    const handleProgress = () => {
+      let progressBars = document.querySelectorAll('.progress .progress-bar');
+      progressBars.forEach((el) => {
+        el.style.width = `${el.getAttribute('aria-valuenow')}%`;
+      });
+    };
+
     // window.onload = handleIsotope();
     // window.onload = handleTyped();
     // window.onload = handleProgress();
