@@ -7,12 +7,71 @@ import soulful from "../assets/img/hobbies/soulful.mp4";
 import performance1 from "../assets/img/hobbies/first-performance.mp4";
 import beverp from "../assets/img/projects/beverp.png";
 import mainScript from "../assets/js/main.js"
+import Isotope from "isotope-layout";
+import Typed from 'typed.js';
+
+
+
 const MainPage = () => {
   const [wh, setWH] = useState(24);
   useEffect(() => {
-    mainScript();
+    // mainScript();
   }, []);
-  
+  const handleIsotope = () => {
+    let portfolioContainer = document.querySelector('.portfolio-container');
+    if (portfolioContainer) {
+      let portfolioIsotope = new Isotope(portfolioContainer, {
+        itemSelector: '.portfolio-item',
+        layoutMode: 'fitRows',
+      });
+
+      let portfolioFilters = document.querySelectorAll('#portfolio-flters li');
+
+      portfolioFilters.forEach((filter) => {
+        filter.addEventListener('click', function () {
+          portfolioFilters.forEach((el) => {
+            el.classList.remove('filter-active');
+          });
+          this.classList.add('filter-active');
+
+          portfolioIsotope.arrange({
+            filter: this.getAttribute('data-filter'),
+          });
+        });
+      });
+    }
+  };
+  const handleTyped = () => {
+    const typedElement = document.querySelector('.typed');
+    if (typedElement) {
+      let typed_strings = typedElement.getAttribute('data-typed-items');
+      typed_strings = typed_strings.split(',');
+      new Typed('.typed', {
+        strings: typed_strings,
+        loop: true,
+        typeSpeed: 100,
+        backSpeed: 50,
+        backDelay: 2000,
+      });
+    }
+  };
+  const handleProgress = () => {
+    let progressBars = document.querySelectorAll('.progress .progress-bar');
+    progressBars.forEach((el) => {
+      el.style.width = `${el.getAttribute('aria-valuenow')}%`;
+    });
+  };
+
+  useEffect(() => {
+    window.onload = handleIsotope()
+    window.onload =  handleTyped();
+    window.onload = handleProgress();
+  }, []);
+ 
+  useEffect(() => {
+    
+  }, []);
+
   return (
     <>
       <header id="header" className="fixed-top ">
@@ -1785,7 +1844,9 @@ const MainPage = () => {
       >
         <i className="bi bi-arrow-up-short"></i>
       </a>
+      {/* <script src={mainScript}></script> */}
     </>
+
   );
 };
 
