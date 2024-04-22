@@ -63,9 +63,17 @@ const MainPage = () => {
   };
 
   useEffect(() => {
-    window.onload = handleIsotope()
-    window.onload =  handleTyped();
-    window.onload = handleProgress();
+    // window.onload = handleIsotope();
+    // window.onload = handleTyped();
+    // window.onload = handleProgress();
+    window.addEventListener('load', handleIsotope());
+    window.addEventListener('load', handleTyped());
+    window.addEventListener('load', handleProgress());
+    return () => {
+      window.removeEventListener('load', handleIsotope());
+      window.removeEventListener('load', handleTyped());
+      window.removeEventListener('load', handleProgress());
+    };
   }, []);
  
   useEffect(() => {
