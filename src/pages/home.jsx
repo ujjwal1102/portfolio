@@ -12,6 +12,7 @@ const MainPage = () => {
   useEffect(() => {
     mainScript();
   }, []);
+  const [showNav,setShowNav] = useState(false)
   
   return (
     <>
@@ -22,41 +23,42 @@ const MainPage = () => {
             <h3 className="caveat">Ujjwal Srivastava</h3>
           </a>
 
-          <nav id="navbar" className="navbar ">
-            <ul>
-              <li>
+          <nav id="navbar" className={`${showNav ?"navbar-mobile":"navbar "}`} >
+            <ul className={`${showNav && "dropdown"}`}>
+              <li onClick={()=>setShowNav(false)}>
                 <a className="nav-link scrollto active" href="#hero">
                   Home
                 </a>
               </li>
-              <li>
+              <li onClick={()=>setShowNav(false)}>
                 <a className="nav-link scrollto" href="#about">
                   About
                 </a>
               </li>
-              <li>
+              <li onClick={()=>setShowNav(false)}>
                 <a className="nav-link  scrollto" href="#portfolio">
                   Portfolio
                 </a>
               </li>
-              <li>
+              <li onClick={()=>setShowNav(false)}>
                 <a className="nav-link  scrollto" href="#skills">
                   Skills
                 </a>
               </li>
-              <li>
+              <li onClick={()=>setShowNav(false)}>
                 <a className="nav-link  scrollto" href="#journal">
                   Resume
                 </a>
               </li>
 
-              <li>
+              <li onClick={()=>setShowNav(false)}>
                 <a className="nav-link scrollto" href="#contact">
                   Contact
                 </a>
               </li>
             </ul>
-            <i className="bi mobile-nav-toggle bi-list"></i>
+            
+            <i className={`bi mobile-nav-toggle ${showNav ?"bi-x":"bi-list"}`} onClick={() => setShowNav(!showNav)}></i>
           </nav>
         </div>
       </header>
