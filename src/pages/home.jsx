@@ -1552,7 +1552,7 @@ const MainPage = () => {
                       <li>
                         Project Link
                         <a
-                          href="https://github.com/ujjwal1102/"
+                          href="https://aman1102.pythonanywhere.com/"
                           target="_blank"
                         >
                           <i
