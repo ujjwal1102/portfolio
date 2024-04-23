@@ -11,7 +11,7 @@ import mainScript from "../assets/js/main.js"
 const MainPage = () => {
   const [wh, setWH] = useState(24);
   useEffect(() => {
-    mainScript();
+    // mainScript();
   }, []);
   const [showNav,setShowNav] = useState(false)
 
