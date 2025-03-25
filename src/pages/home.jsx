@@ -5,15 +5,16 @@ import guitar from "../assets/img/hobbies/guitar.jpg";
 import faceRect from "../assets/img/hobbies/face-rect.jpg";
 import soulful from "../assets/img/hobbies/soulful.mp4";
 import performance1 from "../assets/img/hobbies/first-performance.mp4";
-import beverp from "../assets/img/projects/beverp.png";
+import rootsraja from "../assets/img/projects/RootsRaja.png";
 import mainScript from "../assets/js/main.js"
+
 const MainPage = () => {
   const [wh, setWH] = useState(24);
   useEffect(() => {
     mainScript();
   }, []);
   const [showNav,setShowNav] = useState(false)
-  
+
   return (
     <>
       <header id="header" className="fixed-top ">
@@ -23,9 +24,11 @@ const MainPage = () => {
             <h3 className="caveat">Ujjwal Srivastava</h3>
           </a>
 
+
           <nav id="navbar" className={`${showNav ?"navbar-mobile":"navbar "}`} >
             <ul className={`${showNav && "dropdown"}`}>
               <li onClick={()=>setShowNav(false)}>
+
                 <a className="nav-link scrollto active" href="#hero">
                   Home
                 </a>
@@ -45,11 +48,13 @@ const MainPage = () => {
                   Skills
                 </a>
               </li>
+
               <li onClick={()=>setShowNav(false)}>
                 <a className="nav-link  scrollto" href="#journal">
                   Resume
                 </a>
               </li>
+
 
               <li onClick={()=>setShowNav(false)}>
                 <a className="nav-link scrollto" href="#contact">
@@ -57,8 +62,10 @@ const MainPage = () => {
                 </a>
               </li>
             </ul>
+
             
             <i className={`bi mobile-nav-toggle ${showNav ?"bi-x":"bi-list"}`} onClick={() => setShowNav(!showNav)}></i>
+
           </nav>
         </div>
       </header>
@@ -166,9 +173,8 @@ const MainPage = () => {
               <div className="col-lg-7">
                 <div className="about-descr">
                   <p className="p-heading">
-                    Enthusiastic Full Stack Web Developer, ML/DL Engineer
-                    aspiring to secure a rewarding position by delivering
-                    impactful work in the IT industry.
+                  Python Developer with 2 years of experience in IT industry with Software Development Life Cycle (SDLC) including
+                  design, development, testing and implementation of the projects.
                   </p>
                   {/* <p className="separator">
                       To an English person, it will seem like simplified English,
@@ -328,12 +334,12 @@ const MainPage = () => {
               </div>
 
               <div className="col-lg-4 col-md-6 portfolio-item filter-app">
-                <img src={beverp} className="img-fluid" alt="" />
+                <img src={rootsraja} className="img-fluid" alt="" />
                 <div className="portfolio-info">
-                  <h4>Bevrage ERP</h4>
+                  <h4>RootsRaja</h4>
                   <p>Odoo Technology</p>
                   <a
-                    href={beverp}
+                    href={rootsraja}
                     data-gallery="portfolioGallery"
                     className="portfolio-lightbox preview-link"
                     title="Web 2"
@@ -341,7 +347,7 @@ const MainPage = () => {
                     <i className="bx bx-plus"></i>
                   </a>
                   <a
-                    href="https://beverp.com/"
+                    href="https://rootsraja.in/"
                     className="details-link"
                     title="More Details"
                   >
@@ -438,7 +444,7 @@ const MainPage = () => {
                     <i className="bx bx-plus"></i>
                   </a>
                   <a
-                    href="/"
+                    href="https://www.instagram.com/reel/CmpBJKWB_E8/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
                     className="details-link"
                     title="More Details"
                   >
@@ -1181,7 +1187,7 @@ const MainPage = () => {
                 Download PDF version
                 <a
                   className="px-2"
-                  href="https://drive.google.com/file/d/1Vcae1OLvenIFudZrlXgtWKU4Eav-Mnvw/view?usp=drive_link"
+                  href="https://drive.google.com/file/d/1xFE2ge4mV1qqdPM8Nb42liHq78ihiJPg/view?usp=sharing"
                   target="_blank"
                 >
                   here.
@@ -1382,7 +1388,6 @@ const MainPage = () => {
                     <p id="interests" className="mx-1">
                       Keras
                     </p>
-
                     <p id="interests" className="mx-1">
                       Tensorflow
                     </p>
@@ -1433,41 +1438,21 @@ const MainPage = () => {
                     Projects
                   </h4>
                   <div className="resume-item">
-                    <h4>Ecommerce Web Application</h4>
+                    <h4>PicPioneer</h4>
                     <ul>
                       <li>
-                        Created Ecommerce Web App using Django, DRF & React.js with SQLite DB
+                      Developed and integrated RESTful APIs to enhance application capabilities by connecting third-party services.
                       </li>
                       <li>
-                        Sleek and intuitive user interface for easy navigation
-                        and pleasant shopping experience. Created a web
-                        platform where users (sellers/customers) can upload and purchase products.
+                      Executed 50+ MySQL queries using Python-MySQL connector, optimizing data retrieval and reducing queryexecution time by 25 seconds per transaction.
                       </li>
                       <li>
-                        Comprehensive product catalog with detailed descriptions
-                        and images. Payment gateway integration of Stripe using 
-                        API integration
-                      </li>
-                      <li>
-                        Secure checkout process supporting multiple payment
-                        options.
-                      </li>
-                      <li>
-                        Seller dashboard for easy inventory management, order
-                        processing, and product addition.
-                      </li>
-                      <li>
-                        Streamlined interface for adding new products, including
-                        descriptions, images, and pricing.
-                      </li>
-                      <li>
-                        Order management tools to process incoming orders
-                        efficiently and update order status.
+                      Participated in code reviews and enforced best practices, reducing bugs by 15%.
                       </li>
                       <li>
                         Project Link
                         <a
-                          href="https://ecommerce-django.netlify.app/"
+                          href="https://apps.shopify.com/picpioneer"
                           target="_blank"
                         >
                           <i
@@ -1475,44 +1460,36 @@ const MainPage = () => {
                             style={{ fontSize: "small", color: "#b8a07e" }}
                           />
                         </a>
-                      </li>
-                      
+                      </li> 
                     </ul>
                   </div>
                   <div className="resume-item">
-                    <h4>Chatbot</h4>
+                    <h4>Geoff ERP</h4>
                     <ul>
                       <li>
-                        Created a web-based chatbot application leveraging
-                        Django, a high-level Python web framework, and Django
-                        Channels, an extension for handling WebSockets and
-                        real-time communication.
+                      Engineered a robust application managing product structures and kits, consolidating customer data access.
                       </li>
                       <li>
-                        Implemented real-time bidirectional communication
-                        between the client (web browser) and the server,
-                        enabling instant responses and dynamic updates.
+                      Implemented customizable role controls, improving user experience and increasing satisfaction scores among 50+
+                      internal users.
                       </li>
                       <li>
-                        Integrated natural language processing (NLP) libraries
-                        create deep learning model trained on 80K lines movie
-                        dialogues to enable the chatbot to understand and
-                        respond to user queries.
+                      Built responsive UI designs using React.js, JavaScript, Bootstrap, and jQuery for seamless interaction.
                       </li>
                       <li>
-                        Designed an intuitive user interface allowing users to
-                        interact with the chatbot seamlessly, providing a
-                        user-friendly experience.
+                      Optimized React rendering performance with custom hooks and useCallback, reducing unnecessary re-renders by
+                      70%.
                       </li>
-
                       <li>
-                        Technology Used: Machine/Deep Learning, Django, Python,
-                        SQLite (Database), HTML/CSS, JavaScript, Bootstrap
+                      Integrated RESTful APIs to facilitate smooth order processing and inventory management
+                      </li>
+                      <li>
+                        Technology Used: ReactJs, Redux, Javascript, HTML5, CSS3, .Net, C
                       </li>
                       <li>
                         Project Link
                         <a
-                          href="https://github.com/ujjwal1102/chatbot-webapplication"
+                          href="https://red.s10drd.com/dashboard"
                           target="_blank"
                         >
                           <i
@@ -1521,31 +1498,29 @@ const MainPage = () => {
                           />
                         </a>
                       </li>
-                      
                     </ul>
                   </div>
                   <div className="resume-item">
-                    <h4>Library Management System</h4>
+                    <h4>RootsRaja</h4>
                     <ul>
-                      <li>Developed a website</li>
+                      <li>Developed tailored solutions within Odoo ERP, reducing client-specific workflow processing time by 30%.</li>
                       <li>
-                        Maintains the information about the books present in the
-                        library, numbers of books issued/returned, their
-                        authors, etc
+                      Ensured seamless Odoo integration with existing systems for improved workflow and data management.
                       </li>
                       <li>
-                        A separate administrator panel to update and manage all
-                        the information like issuing/returning a book etc
+                      Conducted in-depth analysis and optimization of modules to boost functionality and performance.
                       </li>
                       <li>
-                        Technology Used : Django, HTML, CSS (svg animations),
-                        JavaScript, MySQL (Database), Community servers (
-                        MySQL),
+                      Created custom Odoo modules and uploaded them to the Odoo App Store.
+                      </li>
+                      <li>Collaborated with stakeholders to identify system requirements and enhance business operations.</li>
+                      <li>
+                        Technology Used : Odoo, XML, JavaScript
                       </li>
                       <li>
                         Project Link
                         <a
-                          href="https://github.com/ujjwal1102/"
+                          href="https://rootsraja.in/"
                           target="_blank"
                         >
                           <i
@@ -1554,7 +1529,6 @@ const MainPage = () => {
                           />
                         </a>
                       </li>
-                      
                     </ul>
                   </div>
                   {/* <div className="resume-item">
@@ -1787,7 +1761,9 @@ const MainPage = () => {
       >
         <i className="bi bi-arrow-up-short"></i>
       </a>
+      {/* <script src={mainScript}></script> */}
     </>
+
   );
 };
 
